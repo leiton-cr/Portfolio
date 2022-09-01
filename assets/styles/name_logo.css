@@ -1,0 +1,36 @@
+.main-logo, .nav-logo{
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+    font-size: 3.5em;
+}
+
+.nav-logo{
+    margin-bottom: 5em;
+    font-size: 2em;
+    display: none;
+}
+
+.logo-letter{
+    transition: transform .1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform-origin: center;
+}
+
+.logo-letter.accented{
+    filter: drop-shadow(1px 1px 8px var(--clr-accent));
+}
+
+.logo-letter:hover{
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 450px) {
+
+    .nav-logo{
+        font-size: 1.8em;
+    }
+
+    .main-logo{
+        font-size: 2em;
+    } 
+}

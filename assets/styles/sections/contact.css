@@ -1,0 +1,20 @@
+.contact-ico {
+  font-size: 2em;
+  transform: translate(-.5rem,.4rem);
+  display: inline-block;
+}
+
+.contact-ways {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.contact-hr {
+  width: 80%;
+  border-bottom: 1px solid var(--clr-accent);
+}

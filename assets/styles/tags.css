@@ -1,0 +1,182 @@
+.tagged {
+  position: relative;
+}
+
+.tagged::before,
+.tagged::after {
+  color: var(--actual-tags);
+  font-style: italic;
+  font-size: 0.8rem;
+  font-family: var(--font-tag);
+}
+
+nav::after {
+  position: absolute;
+  bottom: 1em;
+  left: 2em;
+}
+
+nav::before {
+  position: absolute;
+  top: 1em;
+  left: 2em;
+}
+
+h1::after {
+  position: relative;
+}
+
+h1::before {
+  position: relative;
+}
+
+header:before {
+  content: "<header>";
+}
+
+header:after {
+  content: "</header>";
+}
+
+.tagged:where(footer)::before {
+  content: "<footer>";
+  position: relative;
+  bottom: 0;
+  left: 2em;
+}
+
+.tagged:where(footer)::after {
+  content: "</footer>";
+  position: relative;
+  bottom: 0;
+  left: 2em;
+}
+
+body:before {
+  content: "<body>";
+}
+
+body:after {
+  content: "</body>";
+}
+
+main:before {
+  content: "<main>";
+}
+
+main:after {
+  content: "</main>";
+}
+
+h1:before {
+  content: "<h1>";
+}
+
+h1:after {
+  content: "</h1>";
+}
+
+.tagged:where(h2)::before {
+  content: "<h2>";
+  position: absolute;
+  top: -2.5em;
+}
+
+.tagged:where(h2)::after {
+  content: "</h2>";
+  position: absolute;
+  top: 2.5em;
+  left: 0;
+}
+
+.tagged:where(main)::before {
+  content: "<main>";
+  position: relative;
+  bottom: 0;
+  left: 2em;
+}
+
+.tagged:where(main)::after {
+  content: "</main>";
+  position: relative;
+  bottom: 0;
+  left: 2em;
+}
+
+.tagged:where(address)::before {
+  content: "<address>";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.tagged:where(address)::after {
+  content: "</address>";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+
+.tagged:where(section)::before {
+  content: "<section>";
+  position: absolute;
+  top: 1em;
+  left: 4em;
+}
+
+.tagged:where(section)::after {
+  content: "</section>";
+  position: absolute;
+  bottom: 1em;
+  left: 4em;
+}
+
+.tagged:where(p)::before {
+  content: "<p>";
+  position: absolute;
+  top: -2em;
+  left: 0;
+}
+
+.tagged:where(p)::after {
+  content: "</p>";
+  position: absolute;
+  bottom: -2em;
+  left: 0;
+}
+
+@media screen and (max-width: 900px) {
+  nav:before,
+  nav:after {
+    color: var(--actual-tags);
+    font-style: italic;
+    font-size: 0.8rem;
+    z-index: 100;
+    opacity: 1;
+    transition: opacity .5s;
+  }
+
+  nav:before {
+    content: "<nav>";
+  }
+
+  nav:after {
+    content: "</nav>";
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .tagged:where(p)::before,
+  .tagged:where(p)::after, 
+  .tagged:where(address)::before,
+  .tagged:where(address)::after, 
+  .tagged:where(h1)::before,
+  .tagged:where(h1)::after,
+  .tagged:where(h2)::before,
+  .tagged:where(h2)::after,
+  .tagged:where(footer)::before,
+  .tagged:where(footer)::after{
+    opacity: 0;
+  }
+}

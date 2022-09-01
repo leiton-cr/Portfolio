@@ -1,0 +1,26 @@
+@import url(./about.css);
+@import url(./skills.css);
+@import url(./knowledge.css);
+@import url(./projects.css);
+@import url(./contact.css);
+
+.about-section,
+.contact-section,
+.skills-section,
+.projects-section,
+.knowledge-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+}
+
+.about-info,
+.contact-info,
+.skills-info,
+.projects-info,
+.knowledge-info {
+  width: 55%;
+  min-width: 260px;
+  margin-top: 4em;
+}

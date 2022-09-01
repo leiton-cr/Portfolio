@@ -1,0 +1,61 @@
+@import url(./reset.css);
+@import url(./scrollbar.css);
+@import url(./tags.css);
+
+@import url(./name_logo.css);
+@import url(./footer.css);
+
+@import url(./main.css);
+@import url(./menu_nav.css);
+
+@import url(./sections/sections.css);
+
+
+body {
+  background-color: var(--actual-bg-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
+
+:where(#about, #skills, #knowledge, #proyects, #contact) {
+  scroll-margin-top: 0em;
+}
+
+.wrapper {
+  width: 80%;
+  margin-left: 10%;
+  justify-self: center;
+}
+
+.accented {
+  color: var(--clr-accent);
+}
+
+.p-1 {
+  padding: 1em;
+}
+
+.p-2 {
+  padding: 1em;
+}
+
+.p-3 {
+  padding: 1em;
+}
+
+.pl-1 {
+  padding-left: 1em;
+}
+
+.pl-2 {
+  padding-left: 1em;
+}
+
+.pl-3 {
+  padding-left: 1em;
+}
+

@@ -1,0 +1,166 @@
+@charset "UTF-8";
+
+:root {
+  /* Colors */
+  --clr-black: #393939;
+  --clr-white: #ececec;
+
+  --drk-background-primary: #18181b;
+  --drk-background-secondary: #111111;
+
+  --lgt-background-primary: #ececec;
+  --lgt-background-secondary: #f3f3f3;
+
+  --drk-tags:#585858;
+  --lgt-tags:#b3afaf;
+  
+  --clr-accent: #0071b3;
+
+
+
+  /* Fonts */
+  
+  --font-title:'Permanent Marker';
+  --font-tag: 'Fira Code', cursive;
+  --font-primary: 'Recursive', sans-serif;
+}
+
+:root.light{
+  --actual-font-positive: var(--clr-black);
+  --actual-font-negative: var(--clr-white);
+  --actual-tags: var(--lgt-tags);
+  --actual-bg-primary: var(--lgt-background-primary);
+  --actual-bg-secondary: var(--lgt-background-secondary);
+
+  --clr-accent: #0071b3;
+}
+
+:root.dark{
+  --actual-font-positive: var(--clr-white);
+  --actual-font-negative: var(--clr-black);
+  --actual-tags: var(--drk-tags);
+  --actual-bg-primary: var(--drk-background-primary);
+  --actual-bg-secondary: var(--drk-background-secondary);
+
+  --clr-accent: #12f042;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --actual-font-positive: var(--clr-white);
+    --actual-font-negative: var(--clr-black);
+    --actual-tags: var(--drk-tags);
+    --actual-bg-primary: var(--drk-background-primary);
+    --actual-bg-secondary: var(--drk-background-secondary);
+    
+    --clr-accent: #12f042;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation: none !important;
+    animation: none !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+:where(img, picture, video, iframe, figure) {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+
+  -o-object-fit: cover;
+  object-fit: cover;
+
+  -o-object-position: center center;
+  object-position: center center;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+p :where(a) {
+  display: inline;
+}
+
+li {
+  list-style-type: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:where(h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em) {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+:where(blockquote:before, blockquote:after, q:before, q:after) {
+  content: "";
+  content: none;
+}
+
+::-moz-selection {
+  background-color: var(--actual-font-positive);
+  color: var(--actual-font-negative);
+}
+::selection {
+  background-color: var(--actual-font-positive);
+  color: var(--actual-font-negative);
+}
+
+:where(form, input, textarea, select, button, label) {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+}
+
+:where(table, tr, td) {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  font-size: clamp(14px, 1.5vw, 18px);
+  font-family: var(--font-primary);
+  color: var(--actual-font-positive);
+  line-height: 1.4em;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
