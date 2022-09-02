@@ -1,20 +1,15 @@
-const { classList } = document.documentElement
+const rootClasses = document.documentElement.classList;
+const switchClasses = document.getElementById("theme-switcher").classList;
 
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    classList.add("dark")
-} else {
-    classList.add("light")
-}
+rootClasses.add( (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark" : "light" );
+switchClasses.add( (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark" : "light" );
 
 const toggleDarkMode = () => {
-   
-    if (classList.contains("light")) {
-        classList.remove("light")
-        classList.add("dark")
-    } else {
-        classList.remove("dark")
-        classList.add("light")
-    } 
+    rootClasses.toggle("light");
+    rootClasses.toggle("dark");
+
+    switchClasses.toggle("light");
+    switchClasses.toggle("dark");
 }
 
-toggleDarkMode();
+document.getElementById("theme-switcher").addEventListener("click", toggleDarkMode);

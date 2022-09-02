@@ -12,16 +12,22 @@
 }
 
 .logo-letter{
-    transition: transform .1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: transform 1s;
     transform-origin: center;
+    animation: skew-letter 2s infinite;
 }
+
+.logo-letter:nth-child(odd){
+    animation-delay: .5s;
+}
+
 
 .logo-letter.accented{
     filter: drop-shadow(1px 1px 8px var(--clr-accent));
 }
 
 .logo-letter:hover{
-    transform: scale(1.1);
+    animation: skew-hover 1s forwards;
 }
 
 @media screen and (max-width: 450px) {
@@ -33,4 +39,50 @@
     .main-logo{
         font-size: 2em;
     } 
+}
+
+@keyframes skew-hover {
+    0%{
+        transform: skewX(0deg) ;
+    }
+
+    25%{
+        transform: skewX(5deg);
+    }
+
+    50%{
+        transform: skewX(2deg);
+    }
+
+    75%{
+        transform: skewX(7deg);
+    }
+
+    100%{
+        transform: skewX(0deg);
+    }
+
+}
+
+@keyframes skew-letter {
+    0%{
+        transform: skewX(0deg);
+    }
+
+    25%{
+        transform: skewX(2deg);
+    }
+
+    50%{
+        transform: skewX(0deg);
+    }
+
+    75%{
+        transform: skewX(1deg);
+    }
+
+    100%{
+        transform: skewX(0deg);
+    }
+
 }

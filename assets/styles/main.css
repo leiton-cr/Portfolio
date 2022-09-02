@@ -1,6 +1,7 @@
 .main-section {
   min-height: 100vh;
   padding: 1em;
+  transition: background-color .5s;
 }
 
 .main-section:first-child {
@@ -31,6 +32,12 @@
   font-family: var(--font-title);
 }
 
+.secondary-section__title {
+  font-size: 1.5em;
+  color: var(--actual-font-positive);
+  font-family: var(--font-title);
+}
+
 .main-section__title > .glowing {
   filter: drop-shadow(1px 1px 8px var(--clr-accent));
   animation: glow-shadow 3s infinite;
@@ -38,15 +45,15 @@
 
 @keyframes glow-shadow {
   0% {
-    filter: drop-shadow(1px 1px 4px var(--clr-accent));
+    filter: drop-shadow(1px 1px 8px var(--clr-accent));
   }
 
   50% {
-    filter: drop-shadow(1px 1px 1px var(--clr-accent));
+    filter: drop-shadow(1px 1px 5px var(--clr-accent));
   }
 
   100% {
-    filter: drop-shadow(1px 1px 4px var(--clr-accent));
+    filter: drop-shadow(1px 1px 8px var(--clr-accent));
   }
 
 }

@@ -9,13 +9,18 @@
 
     <title>My Portfolio</title>
     <link rel="stylesheet" href="./assets/styles/styles.css">
-    
+
+    <script src="./assets/scripts/toggle-theme.js" defer></script>
+    <script src="./assets/scripts/toggle-nav.js" defer></script>
+    <script src="./assets/scripts/templating.js" defer></script>
+
     <link rel="shortcut icon" href="./assets/images/ico.png" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Recursive&display=swap"
         rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <script src="https://kit.fontawesome.com/a6ee538727.js" crossorigin="anonymous" defer></script>
@@ -24,34 +29,14 @@
 
 <body class="tagged">
 
-
-    
-
-    <a id="activate"><label for="toggle-input" class="toggle-menu">X</label></a>
     <input type="checkbox" name="toggle-input" id="toggle-input" class="toggle-input" checked>
-
+    <label for="toggle-input" class="toggle-menu" id="activate"><i class="toggle-bars"></i></label>
 
     <nav class="header-nav tagged">
 
         <div class="header-nav__container">
 
-            <div class="nav-logo">
-                <p class="logo-letter accented">{</p>
-                <p class="logo-letter">&nbsp;</p>
-                <p class="logo-letter">L</p>
-                <p class="logo-letter">u</p>
-                <p class="logo-letter">i</p>
-                <p class="logo-letter">s</p>
-                <p class="logo-letter">&nbsp;</p>
-                <p class="logo-letter">L</p>
-                <p class="logo-letter">e</p>
-                <p class="logo-letter">i</p>
-                <p class="logo-letter">t</p>
-                <p class="logo-letter">&oacute;</p>
-                <p class="logo-letter">n</p>
-                <p class="logo-letter">&nbsp;</p>
-                <p class="logo-letter accented">}</p>
-            </div>
+            <div class="nav-logo" data-logo> </div>
 
             <ul class="header-nav__list">
 
@@ -83,7 +68,12 @@
                     <a href="./#contact"> Contacto</a>
                 </li>
 
-                <i onclick="toggleDarkMode()">Tema</i>
+                <i class="nav-separator"> </i>
+
+                <li class="theme-switch" id="theme-switcher">
+                    <i class="fa-solid fa-sun theme-switch__icon sun"></i>
+                    <i class="fa-solid fa-moon theme-switch__icon moon"></i>
+                </li>
 
             </ul>
         </div>
@@ -91,30 +81,13 @@
 
     </nav>
 
-
     <main class="tagged">
 
         <section class="main-section tagged" id="about">
 
             <h1 class="tagged main-title">
 
-                <a href="./#" class="main-logo">
-                    <p class="logo-letter accented">{</p>
-                    <p class="logo-letter">&nbsp;</p>
-                    <p class="logo-letter">L</p>
-                    <p class="logo-letter">u</p>
-                    <p class="logo-letter">i</p>
-                    <p class="logo-letter">s</p>
-                    <p class="logo-letter">&nbsp;</p>
-                    <p class="logo-letter">L</p>
-                    <p class="logo-letter">e</p>
-                    <p class="logo-letter">i</p>
-                    <p class="logo-letter">t</p>
-                    <p class="logo-letter">&oacute;</p>
-                    <p class="logo-letter">n</p>
-                    <p class="logo-letter">&nbsp;</p>
-                    <p class="logo-letter accented">}</p>
-                </a>
+                <a href="./#" class="main-logo" data-logo></a>
 
                 <p>Full-stack Developer</p>
 
@@ -140,19 +113,84 @@
             <div class="skills-section">
                 <div class="skills-info">
 
-                    <div class="skills-binary">
-                        <div class="skills-binary__row d-1"><i class="binary-char">0</i><i class="binary-char">1</i><i
-                                class="binary-char">0</i><i class="binary-char">1</i><i class="binary-char">0</i><i
-                                class="binary-char">1</i><i class="binary-char">0</i><i class="binary-char">1</i> </div>
-                        <div class="skills-binary__row d-2"><i class="binary-char">0</i><i class="binary-char">1</i><i
-                                class="binary-char">0</i><i class="binary-char">0</i><i class="binary-char">0</i><i
-                                class="binary-char">0</i><i class="binary-char">1</i><i class="binary-char">1</i></div>
-                        <div class="skills-binary__row d-3"><i class="binary-char">0</i><i class="binary-char">1</i><i
-                                class="binary-char">0</i><i class="binary-char">1</i><i class="binary-char">0</i><i
-                                class="binary-char">0</i><i class="binary-char">1</i><i class="binary-char">0</i></div>
-                    </div>
+                    <div class="skills-binary" data-binary></div>
 
                     <h2 class="main-section__title tagged"><span class="glowing">Skills</span></h2>
+
+
+                    <div class="skills-icon__container">
+
+                        <h3 class="secondary-section__title">Web</h3>
+                        <div class="secondary-section">
+
+                            <p class="skill-card">
+                                <i class="devicon-html5-plain skill-icon"></i>
+                                <i class="devicon-html5-plain colored skill-icon"></i>
+                                Html 5
+                            </p>
+                            <p class="skill-card">
+                                <i class="devicon-css3-plain skill-icon"></i>
+                                <i class="devicon-css3-plain colored skill-icon"></i>
+                                CSS 3
+                            </p>
+                            <p class="skill-card">
+                                <i class="devicon-javascript-plain  skill-icon"></i>
+
+                                <i class="devicon-javascript-plain colored skill-icon"></i>
+                                Javascript
+                            </p>
+                            <p class="skill-card">
+                                <i class="devicon-typescript-plain skill-icon"></i>
+                                <i class="devicon-typescript-plain colored skill-icon"></i>
+                                Typescript
+                            </p>
+                        </div>
+                        <h3 class="secondary-section__title">Frontend</h3>
+                        <div class="secondary-section">
+                            <p class="skill-card">
+                                <i class="devicon-angularjs-plain skill-icon"></i>
+                                <i class="devicon-angularjs-plain colored skill-icon"></i>
+                                Angular
+                            </p>
+                            <p class="skill-card">
+                                <i class="devicon-react-original skill-icon"></i>
+                                <i class="devicon-react-original colored skill-icon"></i>
+                                React
+                            </p>
+                        </div>
+
+                        <h3 class="secondary-section__title">
+                            Backend
+                        </h3>
+                        <div class="secondary-section">
+                            <p class="skill-card">
+                                <i class="devicon-nodejs-plain skill-icon"></i>
+                                <i class="devicon-nodejs-plain colored skill-icon"></i>
+                                Node
+                            </p>
+                            <p class="skill-card">
+                                <i class="devicon-java-plain skill-icon"></i>
+                                <i class="devicon-java-plain colored skill-icon"></i>
+                                Java
+                            </p>
+                        </div>
+
+                        <h3 class="secondary-section__title">
+                            Bases de datos
+                        </h3>
+                        <div class="secondary-section">
+                            <p class="skill-card">
+                                <i class="devicon-microsoftsqlserver-plain skill-icon"></i>
+                                <i class="devicon-microsoftsqlserver-plain colored  skill-icon"></i>
+                                SQL Server
+                            </p>
+                            <p class="skill-card">
+                                <i class="devicon-mysql-plain skill-icon"></i>
+                                <i class="devicon-mysql-plain colored skill-icon"></i>
+                                MySql
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -161,34 +199,433 @@
 
             <div class="projects-section">
                 <div class="projects-info">
-
                     <h2 class="main-section__title tagged"><span class="glowing">Proyectos</span></h2>
 
+                    <div class="projects-wrapper">
+
+                        <div class="project__container">
+
+                            <div class="project-frontface" data-password></div>
+                            <div class="project-backface">
+                                <h3 class="secondary-project__title"> Generador de contraseñas </h3>
+
+                                <p> Aplicativo online para generar contraseñas aleatorias con distintos tipos de
+                                    características. </p>
+
+                                <h4 class="text-center font-marker">
+                                    Tecnologías utilizadas
+                                </h4>
+
+
+                                <section class="technologies-icon__container">
+                                    <div>
+                                        <i class="devicon-html5-plain colored"></i>
+                                        Html5
+                                    </div>
+
+                                    <div>
+                                        <i class="devicon-css3-plain colored"></i>
+                                        Css3
+                                    </div>
+
+                                    <div>
+                                        <i class="devicon-javascript-plain colored"></i>
+                                        Javascript
+                                    </div>
+                                </section>
+
+
+                                <section class="project-button__container">
+                                    <a target="_blank" class="project-btn"
+                                        href="https://leiton-cr.github.io/Password-Generator-App/">
+                                        <i class="fa-solid fa-globe"></i>
+                                        Ver online
+                                    </a>
+
+                                    <a target="_blank" class="project-btn"
+                                        href="https://github.com/leiton-cr/Password-Generator-App">
+                                        <i class="devicon-github-original"></i>
+                                        Ver github
+                                    </a>
+                                </section>
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="project__container">
+                            <div class="project-frontface" data-routes></div>
+                            <div class="project-backface">
+                                <h3 class="secondary-project__title"> Buscador de rutas </h3>
+
+                                <p> Aplicativo online elaborado para practicar distintos algoritmos de búsqueda de
+                                    rutas.
+                                </p>
+
+                                <h4 class="text-center font-marker">
+                                    Tecnologías utilizadas
+                                </h4>
+
+                                <section class="technologies-icon__container">
+                                    <div>
+                                        <i class="devicon-html5-plain colored"></i>
+                                        Html5
+                                    </div>
+
+                                    <div>
+                                        <i class="devicon-css3-plain colored"></i>
+                                        Css3
+                                    </div>
+
+                                    <div>
+                                        <i class="devicon-javascript-plain colored"></i>
+                                        Javascript
+                                    </div>
+
+                                    <div>
+                                        <i class="fa-solid fa-database"></i>
+                                        Local Storage
+                                    </div>
+                                </section>
+
+                                <section class="project-button__container">
+                                    <a target="_blank" class="project-btn"
+                                        href="https://leiton-cr.github.io/Path_Searching/">
+                                        <i class="fa-solid fa-globe"></i>
+                                        Ver online
+                                    </a>
+
+                                    <a target="_blank" class="project-btn"
+                                        href="https://github.com/leiton-cr/Path_Searching">
+                                        <i class="devicon-github-original"></i>
+                                        Ver github
+                                    </a>
+                                </section>
+                            </div>
+                        </div>
+
+                        <div class="project__container">
+                            <div class="project-frontface" data-tracker></div>
+                            <div class="project-backface">
+                                <h3 class="secondary-project__title"> Buscador IP </h3>
+
+                                <p> Aplicativo online buscador de IP elaborado para practicar conexion a API externas.
+                                </p>
+
+                                <h4 class="text-center font-marker">
+                                    Tecnologías utilizadas
+                                </h4>
+
+                                <section class="technologies-icon__container">
+                                    <div>
+                                        <i class="devicon-html5-plain colored"></i>
+                                        Html5
+                                    </div>
+
+                                    <div>
+                                        <i class="devicon-css3-plain colored"></i>
+                                        Css3
+                                    </div>
+
+                                    <div>
+                                        <i class="devicon-javascript-plain colored"></i>
+                                        Javascript
+                                    </div>
+
+                                    <div>
+                                        <i class="fa-solid fa-diagram-project"></i>
+                                        REST API
+                                    </div>
+                                </section>
+
+                                <section class="project-button__container">
+                                    <a target="_blank" class="project-btn"
+                                        href="https://leiton-cr.github.io/Frontend-Mentor-Challenges/05-Ip-address-tracker-master/">
+                                        <i class="fa-solid fa-globe"></i>
+                                        Ver online
+                                    </a>
+
+                                    <a target="_blank" class="project-btn"
+                                        href="https://github.com/leiton-cr/Frontend-Mentor-Challenges/tree/main/05-Ip-address-tracker-master">
+                                        <i class="devicon-github-original"></i>
+                                        Ver github
+                                    </a>
+                                </section>
+                            </div>
+                        </div>
+
+                        <div class="project__container">
+                            <div class="project-frontface" data-flags></div>
+                            <div class="project-backface">
+                                <h3 class="secondary-project__title"> Banderas del mundo </h3>
+
+                                <p> Aplicativo online para buscar información de distintos paises con conexión a una
+                                    Rest
+                                    API
+                                    externa.</p>
+
+                                <h4 class="text-center font-marker">
+                                    Tecnologías utilizadas
+                                </h4>
+
+                                <section class="technologies-icon__container">
+                                    <div>
+                                        <i class="devicon-html5-plain colored"></i>
+                                        Html5
+                                    </div>
+
+                                    <div>
+                                        <i class="devicon-css3-plain colored"></i>
+                                        Css3
+                                    </div>
+
+                                    <div>
+                                        <i class="devicon-javascript-plain colored"></i>
+                                        Javascript
+                                    </div>
+
+                                    <div>
+                                        <i class="fa-solid fa-diagram-project"></i>
+                                        REST API
+                                    </div>
+                                </section>
+
+                                <section class="project-button__container">
+                                    <a target="_blank" class="project-btn"
+                                        href="https://leiton-cr.github.io/Frontend-Mentor-Challenges/04-Rest-countries-api/">
+                                        <i class="fa-solid fa-globe"></i>
+                                        Ver online
+                                    </a>
+
+                                    <a target="_blank" class="project-btn"
+                                        href="https://github.com/leiton-cr/Frontend-Mentor-Challenges/tree/main/04-Rest-countries-api">
+                                        <i class="devicon-github-original"></i>
+                                        Ver github
+                                    </a>
+
+                                </section>
+                            </div>
+                        </div>
+
+                        <div class="project__container">
+                            <div class="project-frontface" data-rps></div>
+                            <div class="project-backface">
+                                <h3 class="secondary-project__title"> Piedra papel o tijeras </h3>
+
+                                <p> Juego online elaborado para mejorar logica de programacion y manejo del DOM. </p>
+
+                                <h4 class="text-center font-marker">
+                                    Tecnologías utilizadas
+                                </h4>
+
+                                <section class="technologies-icon__container">
+                                    <div>
+                                        <i class="devicon-html5-plain colored"></i>
+                                        Html5
+                                    </div>
+
+                                    <div>
+                                        <i class="devicon-css3-plain colored"></i>
+                                        Css3
+                                    </div>
+
+                                    <div>
+                                        <i class="devicon-javascript-plain colored"></i>
+                                        Javascript
+                                    </div>
+                                </section>
+
+                                <section class="project-button__container">
+                                    <a target="_blank" class="project-btn"
+                                        href="https://leiton-cr.github.io/Frontend-Mentor-Challenges/03-Rock-paper-scissors/">
+                                        <i class="fa-solid fa-globe"></i>
+                                        Ver online
+                                    </a>
+
+                                    <a target="_blank" class="project-btn"
+                                        href="https://github.com/leiton-cr/Frontend-Mentor-Challenges/tree/main/03-Rock-paper-scissors">
+                                        <i class="devicon-github-original"></i>
+                                        Ver github
+                                    </a>
+                                </section>
+
+                            </div>
+                        </div>
+
+                        <div class="project__container">
+                            <div class="project-frontface" data-shortly></div>
+                            <div class="project-backface">
+                                <h3 class="secondary-project__title"> Landing Page / Acortador de links </h3>
+
+                                <p> Aplicativo online elaborado en angular para acortar links. </p>
+
+                                <h4 class="text-center font-marker">
+                                    Tecnologías utilizadas
+                                </h4>
+                                <section class="technologies-icon__container">
+                                    <div>
+                                        <i class="devicon-html5-plain colored"></i>
+                                        Html5
+                                    </div>
+
+                                    <div>
+                                        <i class="devicon-css3-plain colored"></i>
+                                        Css3
+                                    </div>
+
+                                    <div>
+                                        <i class="devicon-typescript-plain colored"></i>
+                                        Typescript
+                                    </div>
+
+                                    <div>
+                                        <i class="devicon-angularjs-plain colored"></i>
+                                        Angular
+                                    </div>
+
+                                    <div>
+                                        <i class="fa-solid fa-diagram-project"></i>
+                                        REST API
+                                    </div>
+                                </section>
+
+                                <section class="project-button__container">
+                                    <a target="_blank" class="project-btn"
+                                        href="https://leiton-cr.github.io/Angular-URL-Shortly/">
+                                        <i class="fa-solid fa-globe"></i>
+                                        Ver online
+                                    </a>
+
+                                    <a target="_blank" class="project-btn"
+                                        href="https://github.com/leiton-cr/Frontend-Mentor-Challenges/tree/main/09.Shortening-api">
+                                        <i class="devicon-github-original"></i>
+                                        Ver github
+                                    </a>
+                                </section>
+                            </div>
+                        </div>
+
+                        <div class="project__container">
+                            <div class="project-frontface" data-todo></div>
+                            <div class="project-backface">
+                                <h3 class="secondary-project__title"> TODO </h3>
+
+                                <p> Aplicativo online elaborado en react para llevar el orden de los pendientes. </p>
+
+                                <h4 class="text-center font-marker">
+                                    Tecnologías utilizadas
+                                </h4>
+
+                                <section class="technologies-icon__container">
+                                    <div>
+                                        <i class="devicon-html5-plain colored"></i>
+                                        Html5
+                                    </div>
+
+                                    <div>
+                                        <i class="devicon-css3-plain colored"></i>
+                                        Css3
+                                    </div>
+
+                                    <div>
+                                        <i class="devicon-javascript-plain colored"></i>
+                                        Javascript
+                                    </div>
+
+                                    <div>
+                                        <i class="devicon-react-original colored"></i>
+                                        React
+                                    </div>
+
+                                    <div>
+                                        <i class="fa-solid fa-database"></i>
+                                        Local Storage
+                                    </div>
+                                </section>
+                                <section class="project-button__container">
+
+                                    <a target="_blank" class="project-btn"
+                                        href="https://leiton-cr.github.io/Todo-React-APP/">
+                                        <i class="fa-solid fa-globe"></i>
+                                        Ver online
+                                    </a>
+
+                                    <a target="_blank" class="project-btn"
+                                        href="https://github.com/leiton-cr/Frontend-Mentor-Challenges/tree/main/08.Todo-React-APP">
+                                        <i class="devicon-github-original"></i>
+                                        Ver github
+                                    </a>
+                                </section>
+                            </div>
+                        </div>
+
+                        <div class="project__container">
+                            <div class="project-frontface" data-planets></div>
+                            <div class="project-backface">
+                                <h3 class="secondary-project__title"> Planetario </h3>
+
+                                <p> Aplicativo online elaborado en angular para ver información sobre los planetas. </p>
+
+                                <h4 class="text-center font-marker">
+                                    Tecnologías utilizadas
+                                </h4>
+                                <section class="technologies-icon__container">
+                                    <div>
+                                        <i class="devicon-html5-plain colored"></i>
+                                        Html5
+                                    </div>
+
+                                    <div>
+                                        <i class="devicon-css3-plain colored"></i>
+                                        Css3
+                                    </div>
+
+                                    <div>
+                                        <i class="devicon-typescript-plain colored"></i>
+                                        Typescript
+                                    </div>
+
+                                    <div>
+                                        <i class="devicon-angularjs-plain colored"></i>
+                                        Angular
+                                    </div>
+
+                                    <div>
+                                        <i class="fa-solid fa-inbox"></i>
+                                        PWA
+                                    </div>
+                                </section>
+                                <section class="project-button__container">
+                                    <a target="_blank" class="project-btn"
+                                        href="https://leiton-cr.github.io/Angular-Planetary-App/">
+                                        <i class="fa-solid fa-globe"></i>
+                                        Ver online
+                                    </a>
+
+                                    <a target="_blank" class="project-btn"
+                                        href="https://github.com/leiton-cr/Angular-Planetary-App">
+                                        <i class="devicon-github-original"></i>
+                                        Ver github
+                                    </a>
+                                </section>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-            </div>
         </section>
 
         <section class="main-section tagged" id="knowledge">
             <div class="knowledge-section">
                 <div class="knowledge-info">
 
-                    <div class="skills-binary">
-                        <div class="skills-binary__row d-1"><i class="binary-char">0</i><i class="binary-char">1</i><i
-                                class="binary-char">0</i><i class="binary-char">1</i><i class="binary-char">0</i><i
-                                class="binary-char">1</i><i class="binary-char">0</i><i class="binary-char">1</i> </div>
-                        <div class="skills-binary__row d-2"><i class="binary-char">0</i><i class="binary-char">1</i><i
-                                class="binary-char">0</i><i class="binary-char">0</i><i class="binary-char">0</i><i
-                                class="binary-char">0</i><i class="binary-char">1</i><i class="binary-char">1</i></div>
-                        <div class="skills-binary__row d-3"><i class="binary-char">0</i><i class="binary-char">1</i><i
-                                class="binary-char">0</i><i class="binary-char">1</i><i class="binary-char">0</i><i
-                                class="binary-char">0</i><i class="binary-char">1</i><i class="binary-char">0</i></div>
-                    </div>
+                    <div class="skills-binary" data-binary></div>
 
                     <h2 class="main-section__title tagged"><span class="glowing">Formación</span></h2>
                 </div>
             </div>
         </section>
-
 
         <section class="main-section tagged" id="contact">
             <div class="contact-section">
@@ -197,21 +634,27 @@
 
                     <address class=" tagged contact-ways">
                         <p>
-                            <a target="_blank" href="https://github.com/leiton-cr"> <i
-                                    class="devicon-github-original contact-ico"></i> Perfil de Github</a>
+                            <a target="_blank" href="https://github.com/leiton-cr">
+                                <i class="devicon-github-original contact-ico"></i>
+                                Perfil de Github
+                            </a>
                         </p>
                         <hr class="contact-hr">
                         <p>
-                            <a target="_blank" href="https://www.linkedin.com/in/luis-leiton-69859b222/"> <i
-                                    class="devicon-linkedin-plain  contact-ico"></i> Perfil de Linkedin</a>
+                            <a target="_blank" href="https://www.linkedin.com/in/luis-leiton-69859b222/">
+                                <i class="devicon-linkedin-plain  contact-ico"></i>
+                                Perfil de Linkedin
+                            </a>
                         </p>
                         <hr class="contact-hr">
                         <p>
-                            <i class="fa-solid fa-envelope  contact-ico"></i> Luis.leiton.cr@gmail.com<br>
+                            <i class="fa-solid fa-envelope  contact-ico"></i>
+                            Luis.leiton.cr@gmail.com
                         </p>
                         <hr class="contact-hr">
                         <p>
-                            <i class="fa-solid fa-phone  contact-ico"></i> +506 8532 9318<br>
+                            <i class="fa-solid fa-phone  contact-ico"></i>
+                            +506 8532 9318
                         </p>
 
                     </address>
@@ -219,8 +662,6 @@
                 </div>
             </div>
         </section>
-
-
     </main>
 
     <footer class="tagged">
@@ -232,9 +673,6 @@
     </footer>
     </div>
 
-    <script src="./assets/scripts/toggle-theme.js" defer></script>
-
 </body>
-
 
 </html>

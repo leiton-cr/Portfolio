@@ -1,0 +1,139 @@
+.project__container {
+  max-width: 500px;
+  min-height: 500px;
+  margin: 1em;
+  position: relative;
+  perspective: 600px;
+}
+
+.project-frontface,
+.project-backface {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--clr-accent);
+    border-radius: 1em;
+    backface-visibility: hidden;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.project-frontface {
+  background-position: center;
+  background-size: cover;
+  background-origin: top;
+  background-repeat: no-repeat;
+  background-color: var(--actual-bg-secondary);
+}
+
+[data-password]{
+    background-image: url(../../images/projects/password.png);
+}
+
+[data-routes]{
+    background-image: url(../../images/projects/routes.png);
+}
+
+[data-tracker]{
+    background-image: url(../../images/projects/tracker.png);
+}
+
+[data-flags]{
+    background-image: url(../../images/projects/flags.png);
+}
+
+[data-rps]{
+    background-image: url(../../images/projects/rps.png);
+}
+
+[data-shortly]{
+    background-image: url(../../images/projects/shortly.png);
+}
+
+[data-todo]{
+    background-image: url(../../images/projects/todo.png);
+}
+
+[data-planets]{
+    background-image: url(../../images/projects/planets.png);
+}
+
+
+.project-backface {
+  background-color: var(--actual-bg-secondary);
+  transform: rotate3d(0, 1, 0, 180deg);
+  padding: 1em;
+}
+
+.project__container:hover > .project-backface {
+  transform: rotate3d(0, 1, 0, 360deg);
+}
+
+.project__container:hover > .project-frontface {
+  transform: rotate3d(0, 1, 0, 180deg);
+}
+
+.projects-wrapper {
+  margin-top: 3em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.secondary-project__title {
+  min-height: 5ch;
+  text-align: center;
+  font-size: 1.5em;
+  color: var(--actual-font-positive);
+  font-family: var(--font-title);
+}
+
+.projects-wrapper p {
+  min-height: 12ch;
+  place-items: center;
+}
+
+.technologies-icon__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: space-evenly;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  min-height: 10ch;
+}
+
+.project-button__container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.project-btn {
+  transition: color 0.25s;
+}
+
+.project-btn:hover {
+  color: var(--clr-accent);
+}
+
+@media screen and (max-width: 900px) {
+    
+    .project__container{
+        min-height: 300px;
+    }
+
+  .projects-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .secondary-project__title {
+    min-height: 5ch;
+  }
+
+  .projects-wrapper p {
+    min-height: 8ch;
+  }
+
+  .technologies-icon__container {
+    min-height: 5ch;
+  }
+}

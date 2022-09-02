@@ -1,0 +1,27 @@
+.theme-switch {
+  position: relative;
+  top: .2em;
+  cursor: pointer;
+  transition: color .5s;
+}
+
+.theme-switch:hover{
+    color: var(--clr-accent);
+    filter: drop-shadow(1px 1px 8px var(--clr-accent));
+}
+.theme-switch.light > .moon,
+.theme-switch.dark > .sun {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s;
+}
+
+.theme-switch__icon {
+  position: absolute;
+  right: 0;
+  transition: transform 1s;
+}
+
+.theme-switch__icon:hover {
+    transform: rotate(360deg);
+}

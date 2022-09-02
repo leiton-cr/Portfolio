@@ -23,6 +23,7 @@
   --font-title:'Permanent Marker';
   --font-tag: 'Fira Code', cursive;
   --font-primary: 'Recursive', sans-serif;
+
 }
 
 :root.light{
@@ -67,6 +68,7 @@
 }
 
 * {
+  -webkit-tap-highlight-color: transparent;
   margin: 0;
   padding: 0;
   border: 0;
