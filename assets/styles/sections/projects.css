@@ -8,14 +8,14 @@
 
 .project-frontface,
 .project-backface {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 1px solid var(--clr-accent);
-    border-radius: 1em;
-    backface-visibility: hidden;
-    transition: transform 1s;
-    transform-style: preserve-3d;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--clr-accent);
+  border-radius: 1em;
+  backface-visibility: hidden;
+  transition: transform 1s;
+  transform-style: preserve-3d;
 }
 
 .project-frontface {
@@ -26,38 +26,37 @@
   background-color: var(--actual-bg-secondary);
 }
 
-[data-password]{
-    background-image: url(../../images/projects/password.png);
+[data-password] {
+  background-image: url(../../images/projects/password.webp);
 }
 
-[data-routes]{
-    background-image: url(../../images/projects/routes.png);
+[data-routes] {
+  background-image: url(../../images/projects/routes.webp);
 }
 
-[data-tracker]{
-    background-image: url(../../images/projects/tracker.png);
+[data-tracker] {
+  background-image: url(../../images/projects/tracker.webp);
 }
 
-[data-flags]{
-    background-image: url(../../images/projects/flags.png);
+[data-flags] {
+  background-image: url(../../images/projects/flags.webp);
 }
 
-[data-rps]{
-    background-image: url(../../images/projects/rps.png);
+[data-rps] {
+  background-image: url(../../images/projects/rps.webp);
 }
 
-[data-shortly]{
-    background-image: url(../../images/projects/shortly.png);
+[data-shortly] {
+  background-image: url(../../images/projects/shortly.webp);
 }
 
-[data-todo]{
-    background-image: url(../../images/projects/todo.png);
+[data-todo] {
+  background-image: url(../../images/projects/todo.webp);
 }
 
-[data-planets]{
-    background-image: url(../../images/projects/planets.png);
+[data-planets] {
+  background-image: url(../../images/projects/planets.webp);
 }
-
 
 .project-backface {
   background-color: var(--actual-bg-secondary);
@@ -116,10 +115,9 @@
 }
 
 @media screen and (max-width: 900px) {
-    
-    .project__container{
-        min-height: 350px;
-    }
+  .project__container {
+    min-height: 350px;
+  }
 
   .projects-wrapper {
     grid-template-columns: repeat(1, 1fr);

@@ -1,0 +1,53 @@
+.knowledge {
+  margin-top: 5em;
+  margin-bottom: 5em;
+  display: grid;
+  gap: 3em;
+  isolation: isolate;
+}
+
+.knowledge-box {
+  width: 90%;
+  margin: auto;
+}
+
+.knowledge-img {
+  border-radius: 1em;
+  height: 12em;
+  border: 1px solid var(--clr-accent);
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  object-fit: contain;
+  background-color: white;
+  transition: transform 0.5s;
+}
+
+.knowledge-img:hover {
+  transform: scale(1.05) translateY(-1em);
+}
+
+/*Tablet*/
+@media (min-width: 768px) {
+  .knowledge {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+
+/*Desktop*/
+@media (min-width: 1024px) {
+  .knowledge-img {
+    height: 200px;
+  }
+}
+
+.knowledge-title{
+    margin-top: .5em;
+    font-size: 1.2rem;
+    font-family: var(--font-title);
+}
+
+.knowledge-subtitle{
+    font-size: .9rem;
+    font-style: italic;
+}
