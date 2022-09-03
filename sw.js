@@ -1,5 +1,7 @@
 const CACHE_ELEMENTS = [
     "./",
+    "https://kit.fontawesome.com/a6ee538727.js",
+    
   
 ];
 
