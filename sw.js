@@ -1,5 +1,6 @@
 const CACHE_ELEMENTS = [
-    "./Portfolio/",
+    "./",
+  
 ];
 
 const CACHE_NAME = "v1_Portfolio-APP";
