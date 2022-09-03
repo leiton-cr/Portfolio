@@ -13,6 +13,7 @@
   height: 100%;
   border: 1px solid var(--clr-accent);
   border-radius: 1em;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transition: transform 1s;
   transform-style: preserve-3d;
