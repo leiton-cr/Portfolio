@@ -4,7 +4,7 @@
   "description": "Luis Leiton Portfolio",
   "background_color": "#fafafa",
   "theme_color": "#1976d2",
-  "start_url": "./",
+  "start_url": "./Portfolio/",
   "scope": "./",
   "lang": "es-CR",
   "display": "fullscreen",
