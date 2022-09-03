@@ -1,7 +1,7 @@
 const CACHE_ELEMENTS = [
     "./",
 
-    "/assets/styles/minified.css",
+    "./assets/styles/minified.css",
 
     "./assets/images/ico.png",
     "./assets/images/ico-xl.png",
